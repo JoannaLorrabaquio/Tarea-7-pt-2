@@ -1,0 +1,32 @@
+public class Main {
+    public static void main(String[] args) {
+
+        System.out.println("Computadora");
+        Computadora computadora1=new Computadora("Asus","VivoBook",new Monitor("Sony","k8000",14),new Mouse("logitec","U500","oficina"),new Teclado("GIO","K11",1,true),new CPU());
+        Computadora computadora2=new Computadora(
+         "Active Cool","Patito2",
+                new Monitor("BengQ","GW2480",24),
+                new Mouse("Hp","100 Wirred Mouse", "gamer"),
+                new Teclado("Free wolf free","T13",1,true),
+                new CPU("Ryzen","7950X",5.6)
+        );
+        System.out.println(computadora1);
+        System.out.println(computadora2);
+
+        Computadora computadora3=new Computadora(
+                "HP",
+                "Pavillyon",
+                new Monitor("Hp","HPVion",21),
+                new Mouse("Logitec","modelo x","gamer"),
+                new Teclado("logitec","Lt300",1,true),
+                new CPU("Intel","Corei7",8.5)
+        );
+        System.out.println(computadora3);
+        computadora3.getProcesador().setFrecuencia(4.6);
+        System.out.println(computadora3);
+        computadora3.getRaton().setTipo("de oficina");
+        System.out.println(computadora3);
+        computadora3.setKeyboard(new Teclado("Gamefactor","k4000",2,true));
+        System.out.println(computadora3);
+    }
+}
