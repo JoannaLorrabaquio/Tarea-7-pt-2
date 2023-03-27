@@ -1,0 +1,325 @@
+public class Main {
+    public static void main(String[] args) {
+
+        System.out.println("Computadora");
+        Computadora computadora1=new Computadora("Asus","VivoBook",new Monitor("Sony","k8000",14),new Mouse("logitec","U500","oficina"),new Teclado("GIO","K11",1,true),new CPU());
+        Computadora computadora2=new Computadora(
+         "Active Cool","Patito2",
+                new Monitor("BengQ","GW2480",24),
+                new Mouse("Hp","100 Wirred Mouse", "gamer"),
+                new Teclado("Free wolf free","T13",1,true),
+                new CPU("Ryzen","7950X",5.6)
+        );
+        System.out.println(computadora1);
+        System.out.println(computadora2);
+
+        Computadora computadora3=new Computadora(
+                "HP",
+                "Pavillyon",
+                new Monitor("Hp","HPVion",21),
+                new Mouse("Logitec","modelo x","gamer"),
+                new Teclado("logitec","Lt300",1,true),
+                new CPU("Intel","Corei7",8.5)
+        );
+        System.out.println(computadora3);
+        computadora3.getProcesador().setFrecuencia(4.6);
+        System.out.println(computadora3);
+        computadora3.getRaton().setTipo("de oficina");
+        System.out.println(computadora3);
+        computadora3.setKeyboard(new Teclado("Gamefactor","k4000",2,true));
+        System.out.println(computadora3);
+    }
+}
+
+public class Computadora {
+    private String marca;
+    private String modelo;
+    private Monitor pantalla;
+    private Mouse raton;
+    private Teclado keyboard;
+    private CPU procesador;
+
+    public Computadora() {
+    }
+
+    public Computadora(String marca, String modelo, Monitor pantalla, Mouse raton, Teclado keyboard, CPU procesador) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.pantalla = pantalla;
+        this.raton = raton;
+        this.keyboard = keyboard;
+        this.procesador = procesador;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public Monitor getPantalla() {
+        return pantalla;
+    }
+
+    public void setPantalla(Monitor pantalla) {
+        this.pantalla = pantalla;
+    }
+
+    public Mouse getRaton() {
+        return raton;
+    }
+
+    public void setRaton(Mouse raton) {
+        this.raton = raton;
+    }
+
+    public Teclado getKeyboard() {
+        return keyboard;
+    }
+
+    public void setKeyboard(Teclado keyboard) {
+        this.keyboard = keyboard;
+    }
+
+    public CPU getProcesador() {
+        return procesador;
+    }
+
+    public void setProcesador(CPU procesador) {
+        this.procesador = procesador;
+    }
+
+    @Override
+    public String toString() {
+        return "Computadora{" +
+                "marca='" + marca + '\'' +
+                ", modelo='" + modelo + '\'' +
+                ", pantalla=" + pantalla +
+                ", raton=" + raton +
+                ", keyboard=" + keyboard +
+                ", procesador=" + procesador +
+                '}';
+    }
+}
+
+
+
+
+public class Teclado {
+    private String marca;
+    private String modelo;
+    private int NumDeTeclado;
+    private boolean multimedia;
+
+    public Teclado() {
+    }
+
+    public Teclado(String marca, String modelo, int numDeTeclado, boolean multimedia) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.NumDeTeclado = numDeTeclado;
+        this.multimedia = multimedia;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public int getNumDeTeclado() {
+        return NumDeTeclado;
+    }
+
+    public void setNumDeTeclado(int numDeTeclado) {
+        NumDeTeclado = numDeTeclado;
+    }
+
+    public boolean getMultimedia() {
+        return multimedia;
+    }
+
+    public void setMultimedia(boolean multimedia) {
+        this.multimedia = multimedia;
+    }
+
+    @Override
+    public String toString() {
+        return "Teclado{" +
+                "marca='" + marca + '\'' +
+                ", modelo='" + modelo + '\'' +
+                ", NumDeTeclado=" + NumDeTeclado +
+                ", multimedia=" + multimedia +
+                '}';
+    }
+}
+
+
+
+
+public class Mouse {
+    private String marca;
+    private String modelo;
+    private String tipo;
+
+    public Mouse() {
+    }
+
+    public Mouse(String marca, String modelo, String tipo) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.tipo = tipo;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    @Override
+    public String toString() {
+        return "Mouse{" +
+                "marca='" + marca + '\'' +
+                ", modelo='" + modelo + '\'' +
+                ", tipo='" + tipo + '\'' +
+                '}';
+    }
+}
+
+
+
+
+public class CPU {
+    private String marca;
+    private String modelo;
+    private double frecuencia;
+
+    public CPU() {
+    }
+
+    public CPU(String marca, String modelo, double frecuencia) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.frecuencia = frecuencia;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public double getFrecuencia() {
+        return frecuencia;
+    }
+
+    public void setFrecuencia(double frecuencia) {
+        this.frecuencia = frecuencia;
+    }
+
+    @Override
+    public String toString() {
+        return "CPU{" +
+                "marca='" + marca + '\'' +
+                ", modelo='" + modelo + '\'' +
+                ", frecuencia=" + frecuencia +
+                '}';
+    }
+}
+
+
+
+
+public class Monitor {
+    private String marca;
+    private String modelo;
+    private int pulgadas;
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public int getPulgadas() {
+        return pulgadas;
+    }
+
+    public void setPulgadas(int pulgadas) {
+        this.pulgadas = pulgadas;
+    }
+
+    public Monitor(String marca, String modelo, int pulgadas) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.pulgadas = pulgadas;
+    }
+
+    @Override
+    public String toString() {
+        return "Monitor{" +
+                "marca='" + marca + '\'' +
+                ", modelo='" + modelo + '\'' +
+                ", pulgadas='" + pulgadas + '\'' +
+                '}';
+    }
+}
